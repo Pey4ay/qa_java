@@ -5,7 +5,8 @@ import java.util.List;
 public class Lion {
 
     boolean hasMane;
-    Feline feline;
+    Feline feline; //убираем зависимость, путем создания класса в тестовом классе, а не в самом классе.
+
     public Lion(Feline feline, String sex) throws Exception {
         if ("Самец".equals(sex)) {
             hasMane = true;

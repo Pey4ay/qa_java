@@ -7,46 +7,28 @@ import org.junit.runners.Parameterized;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.Assert.*;
 
-@RunWith(Parameterized.class)
+//Данный тест без параметризации, так как методы класса не требуют входных данных
+@RunWith(MockitoJUnitRunner.class)
 public class CatTest {
 
-    @Before
-    public void init() {
-        MockitoAnnotations.initMocks(this);
-    }
     @Mock
     Feline feline;
 
-
-    private final String whatSoundHaveCat;
-
-    public CatTest(String whatSoundHaveCat) {
-        this.whatSoundHaveCat = whatSoundHaveCat;
-    }
-
-    @Parameterized.Parameters
-    public static Object[][] whatSound(){
-        return new Object[][] {
-                {"Мяу"},
-                {"Гав"},
-                {"Йоу"},
-        };
-    }
-
     @Test
     public void whatCatCanDo() throws Exception {
+        //Создаем объект
         Cat cat = new Cat(feline);
+        //Мок для вывода метода из класса Feline
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        String expectedResult = whatSoundHaveCat;
+        //Вывод результата работы метода getFood из тестируемого класса, который работает с моком
         System.out.println(cat.getFood());
-        assertEquals(expectedResult, cat.getSound());
+        //Сравниваем ожидаемый результат работы метода и реальный
+        assertEquals("Мяу", cat.getSound());
     }
 
 }
