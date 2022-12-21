@@ -22,7 +22,7 @@ public class LionTest {
         MockitoAnnotations.initMocks(this);
     }
     @Mock
-    Feline feline;
+    private Feline feline;
 
     //Параметризация
     private final String sex;
@@ -50,7 +50,7 @@ public class LionTest {
         Mockito.when(feline.getKittens()).thenReturn(1);
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of( "Рыба", "Птицы", "Животные"));
 
-        //Выводим результаты работы наших методово класса Lione
+        //Выводим результаты работы наших методово класса Lion
         System.out.println(lion.getFood());
         System.out.println(lion.getKittens());
 

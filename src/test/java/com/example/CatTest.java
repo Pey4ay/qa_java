@@ -17,14 +17,14 @@ import static org.junit.Assert.*;
 public class CatTest {
 
     @Mock
-    Feline feline;
+    private Feline feline;
 
     @Test
     public void whatCatCanDo() throws Exception {
         //Создаем объект
         Cat cat = new Cat(feline);
         //Мок для вывода метода из класса Feline
-        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Mockito.when(feline.eatMeat()).thenReturn(List.of("Птицы", "Животные",  "Рыба"));
         //Вывод результата работы метода getFood из тестируемого класса, который работает с моком
         System.out.println(cat.getFood());
         //Сравниваем ожидаемый результат работы метода и реальный
