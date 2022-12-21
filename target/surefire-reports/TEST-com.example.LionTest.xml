@@ -64,6 +64,6 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.example.LionTest" name="whatCanDoLion[0]" time="0.009"/>
-  <testcase classname="com.example.LionTest" name="whatCanDoLion[1]" time="0.001"/>
+  <testcase classname="com.example.LionTest" name="whatCanDoLion[0]" time="0.008"/>
+  <testcase classname="com.example.LionTest" name="whatCanDoLion[1]" time="0.002"/>
 </testsuite>
